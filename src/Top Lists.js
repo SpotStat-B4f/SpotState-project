@@ -5,10 +5,10 @@ import TopAlbumsComponent from "./TopAlbums";
 
 const TopList = () => {
     return (
-        <div>
-            <TopArtistsComponent />
-            <TopSongsComponent />
-            <TopAlbumsComponent />
+        <div className="flex flex-row w-5/6 gap-5 jsutify">
+            <TopArtistsComponent className="w-2/6" />
+            <TopSongsComponent className="w-2/6" />
+            <TopAlbumsComponent className="w-2/6" />
 
         </div>
     )
