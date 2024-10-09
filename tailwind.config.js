@@ -4,10 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'scrollbar-thumb': '#00D084', // Green for the scrollbar thumb
-        'scrollbar-track': '#3a0e73', // Dark purple for the scrollbar track
+        'scrollbar-thumb': '#00D084', 
+        'scrollbar-track': '#3a0e73', 
       },
-    },
+      backgroundImage:{
+        'background':"url('./Img/bg-9.jpg')"
+      }
+    }
   },
   plugins: [
     require('tailwind-scrollbar'),

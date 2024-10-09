@@ -45,13 +45,17 @@ const TopArtistsComponent = () => {
     const displayedSortedArtists = showMore ? sortedArtists : sortedArtists.slice(0, 5);
 
     return (
-        <div className="p-6 max-w-4xl mx-auto bg-[#3a0e73] rounded-lg shadow-lg  ">
-            <h1 className="text-2xl font-bold text-center mb-6 text-white">Top Artists</h1>
-            <button 
-                onClick={filterToggle} 
-                className="mb-4 text-sm font-medium text-white hover:text-[#00D084] transition duration-300"
+        <div className="m-6 p-6 max-w-4xl mx-auto bg-[#3a0e73] bg-opacity-90 hover:bg-opacity-100 transition-all ease-in duration-200 rounded-lg shadow-lg">
+            <h1 className="text-2xl font-bold text-left mb-6 text-white">Top Artists</h1>
+            <button
+                onClick={filterToggle}
+                className="mb-4 text-sm font-medium text-white hover:text-[#00D084] transition duration-300 flex justify-between gap-3 items-center"
             >
-                {filter ? "Show All Time" : "Show Last Year"}
+                
+                <p>{filter ? "Show All Time" : "Show Last Year"}</p>
+                <span class="material-symbols-outlined">
+                    change_circle
+                </span>
             </button>
             <table className="min-w-full bg-gray-800 rounded-lg overflow-hidden ">
                 <thead>
@@ -97,11 +101,12 @@ const TopArtistsComponent = () => {
                 </tbody>
             </table>
             <div className={showMore ? "sticky bottom-0 bg-opacity-0 p-4" : "bottom-0 bg-opacity-0 p-4"}>
-                <button 
-                    onClick={showToggle} 
-                    className="text-xs md:text-sm font-medium text-white bg-opacity-0 hover:text-[#00D084] transition duration-300 py-2 px-3 md:py-3 md:px-4"
+            <button
+                    onClick={showToggle}
+                    className="relative group text-xs md:text-sm font-medium text-white bg-opacity-0 hover:text-[#00D084] transition duration-300 py-2 px-3 md:py-3 md:px-4"
                 >
                     {showMore ? "Show Less" : "Show More"}
+                    <span className="absolute bottom-0 left-0 w-0 h-[0.5px] bg-[#00D084] transition-all duration-300 group-hover:w-full"></span>
                 </button>
             </div>
         </div>
