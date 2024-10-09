@@ -1,13 +1,12 @@
 import React from "react";
-import Nav from "../NavBar/Nav";
 
 // import background from "../Img/bg-1.jpg"
 
 function Home() {
   return (
     <div className="w-full h-screen ">
-      <div className="h-full Photo bg-background bg-no-repeat bg-cover flex flex-col gap-60 ">
-        <Nav />
+      <div className="h-full Photo bg-background bg-no-repeat bg-cover flex flex-col gap-60 justify-center ">
+        
 
         <div className="flex flex-col gap-16 justify-center items-center">
           <p className="text-white text-2xl text-center font-bgfont tracking-widest font-bold uppercase ">
