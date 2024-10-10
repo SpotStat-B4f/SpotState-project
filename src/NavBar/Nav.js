@@ -22,7 +22,7 @@ function Nav() {
           <Link to="/Home">Home</Link>
         </li>
         <li className="hover:text-purple-700 hover:bg-white rounded-2xl px-3 py-1 flex-1 text-center ease-out duration-300">
-          <Link to="/profile">Profile</Link>
+          <Link to="/General">Profile</Link>
         </li>
         <li className="hover:text-purple-700 hover:bg-white rounded-2xl px-3 py-1 flex-1 text-center ease-out duration-300">
           <Link to="/TopLists">Top</Link>
@@ -62,7 +62,7 @@ function Nav() {
             <Link to="/Home" onClick={toggleMenu}>Home</Link>
           </li>
           <li className="hover:text-purple-700 hover:bg-white rounded-2xl px-3 py-1 text-center ease-out duration-300">
-            <Link to="/profile" onClick={toggleMenu}>Profile</Link>
+            <Link to="/General" onClick={toggleMenu}>Profile</Link>
           </li>
           <li className="hover:text-purple-700 hover:bg-white rounded-2xl px-3 py-1 text-center ease-out duration-300">
             <Link to="/TopLists" onClick={toggleMenu}>Top</Link>

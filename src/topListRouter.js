@@ -6,7 +6,7 @@ import TopAlbumsComponent from "./TopAlbums";
 
 const TopListRouter = () => {
     return (
-        <div className="min-h-screen Photo bg-background bg-no-repeat bg-cover text-white pt-20 ">
+        <div className="min-h-screen  bg-gradient-to-r from-pink-950 via-[#1a001a] via-[#2e003e]  to-[#0d000d] text-white pt-20 ">
             <nav className="bg-opacity-0 py-4 shadow-lg m-0">
                 <ul className="flex justify-center space-x-6 md:space-x-12 text-lg">
                     <li>

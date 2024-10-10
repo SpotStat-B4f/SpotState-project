@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-// import background from "../Img/bg-1.jpg"
 
 function Home() {
   return (
@@ -13,7 +13,7 @@ function Home() {
             Uncover your top music trends and hidden listening <br />
             habits with Spotify Spy.
           </p>
-          <button className="text-white border-2 p-2 px-10 rounded-[50px] hover:bg-purple-500 ease-out duration-300 hover:scale-[1.2]">Get Started</button>
+          <button className="text-white border-2 p-2 px-10 rounded-[50px] hover:bg-purple-500 ease-out duration-300 hover:scale-[1.2]"><Link to="/General">Get Started</Link></button>
         </div>
       </div>
     </div>
