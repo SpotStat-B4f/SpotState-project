@@ -11,7 +11,7 @@ function Home() {
         <div className="flex flex-col gap-16 justify-center items-center">
           <p className="text-white text-2xl text-center font-bgfont tracking-widest font-bold uppercase ">
             Uncover your top music trends and hidden listening <br />
-            habits with Spotify Spy.
+            habits with SpotStat
           </p>
           <button className="text-white border-2 p-2 px-10 rounded-[50px] hover:bg-purple-500 ease-out duration-300 hover:scale-[1.2]"><Link to="/General">Get Started</Link></button>
         </div>

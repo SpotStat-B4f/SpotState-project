@@ -4,6 +4,7 @@ import Home from "./Home/Home";
 import TopList from "./TopLists";
 import General from "./General/General";
 import Artists from "./artists";
+import BoadCast from "./BoadCast/BoadCast"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/TopLists/*" element={<TopList />} />
         <Route path="/General" element={<General />} /> 
         <Route path="/artists" element={<Artists />} /> 
+        <Route path="/BoadCast" element={<BoadCast />} /> 
 
 
       </Routes>

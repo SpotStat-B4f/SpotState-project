@@ -20,6 +20,9 @@ module.exports = {
       backgroundSize: {
         "gradient-border": "200% 200%",
       },
+      fontFamily:{
+        "bgfont":"Exo2"
+      }
     },
   },
   plugins: [],

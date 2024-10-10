@@ -19,6 +19,14 @@ const Artists = () => {
         setShowMore(!showMore);  
     };  
 
+    const formatTime = (milliseconds) => {  
+        const totalSeconds = Math.floor(milliseconds / 1000);  
+        const hours = Math.floor(totalSeconds / 3600);  
+        const minutes = Math.floor((totalSeconds % 3600) / 60);  
+        const seconds = totalSeconds % 60;  
+
+        return `${hours}h:${minutes}m:${seconds}s`;  
+    };  
     const artistPlaytimeArray = [];  
     data.forEach(song => {  
         const artist = song.master_metadata_album_artist_name;  
@@ -111,61 +119,66 @@ const Artists = () => {
         setShowAllSongs(!showAllSongs);
     };
 
-    return (
-        <div className="relative py-16">
-            <div className="absolute inset-0 z-0">
-                <div className="sticky top-0 h-screen flex flex-col items-center justify-center bg-gradient-to-r from-pink-950 via-[#1a001a] via-[#2e003e]  to-[#0d000d] text-white pt-20  text-white">
-                </div>
-            </div>
-            <div className="relative z-10 p-4">
-                <h1 className="text-3xl font-bold mb-4 text-center py-6 text-white">All Artists</h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {displayedSortedArtists.map((item, index) => (
-                        <div
-                            key={index}
-                           className="bg-white bg-opacity-60 backdrop-blur-md shadow-lg rounded-lg p-4 cursor-pointer hover:bg-opacity-80 transition transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl"
-                            onClick={() => handleArtistSelect(item.artist, index)}
-                        >
-                            <h3 className="text-lg font-semibold text-black">{item.artist}</h3>
-                        </div>
-                    ))}
-                </div>
-                <div className="flex justify-center mt-6">
-                    <button onClick={showToggle} className="bg-gray-700 text-white px-6 py-2 rounded-lg hover:bg-violet-400 transition">
-                        {showMore ? "Show Less" : "Show More"}
-                    </button>
-                </div>
-                {showPopup && selectedArtist && (
-                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                        <div className=" bg-violet-300 rounded-lg p-6 w-11/12 sm:w-1/2 relative overflow-y-auto max-h-[80vh]">
-                            <button onClick={closePopup} className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
-                            <h2 className="text-2xl font-bold mb-4">Details for {selectedArtist.artist}</h2>
-                            <p>Rank: {selectedArtist.rank}</p>
-                            <p>Most Listened Season: {artistDetails.season}</p>
-                            <p>Total Listening Time: {(artistDetails.totalListeningTime / 1000).toFixed(2)} seconds</p>
-                            <p>Total Songs: {artistDetails.totalSongs}</p>
-                            <p>Unique Songs: {artistDetails.uniqueSongs}</p>
-                            <p>Listening Percentage: {artistDetails.listeningPercentage.toFixed(2)}%</p>
-                            <h3 className="text-xl font-semibold mt-4">Top Songs:</h3>
-                            <ul className="list-disc pl-6">
-                                {(showAllSongs ? artistDetails.topSongs : artistDetails.topSongs.slice(0, 5)).map((song, index) => (
-                                    <li key={index}>
-                                        {song.name} - {(song.totalMs / 1000).toFixed(2)} seconds
-                                    </li>
-                                ))}
-                            </ul>
-                            <button
-                                onClick={toggleShowAllSongs}
-                                className="mt-4 bg-violet-700 text-white px-4 py-2 rounded-lg hover:bg-violet-900 transition sticky bottom-0 text-center"
-                            >
-                                {showAllSongs ? "Show Less" : "Show More"}
-                            </button>
-                        </div>
-                    </div>
-                )}
-            </div>
-        </div>
-    );
-};
+    return (  
+        <div className="relative py-24">  
+            <div className="absolute inset-0 z-0">  
+                <div className="sticky top-0 h-screen flex flex-col items-center justify-center bg-gradient-to-r from-pink-950 via-[#1a001a] to-[#0d000d] text-white ">  
+                </div>  
+            </div>  
+            <div className="relative z-10 p-4">  
+                <h1 className="text-3xl font-bold mb-4 text-center text-white">All Artists</h1>  
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">  
+                    {displayedSortedArtists.map((item, index) => (  
+                        <div  
+                            key={index}  
+                            className="bg-white bg-opacity-60 backdrop-blur-md shadow-lg rounded-lg p-4 cursor-pointer hover:bg-opacity-80 transition transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl"  
+                            onClick={() => handleArtistSelect(item.artist, index)}  
+                        >  
+                            <h3 className="text-lg font-semibold text-black">{item.artist}</h3>  
+                        </div>  
+                    ))}  
+                </div>  
 
+                <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-20">  
+                    <button   
+                        onClick={showToggle}   
+                        className="bg-gray-700 mb-6 text-white px-6 py-2 rounded-lg hover:bg-violet-400 transition"    
+                    >    
+                        {showMore ? "Show Less" : "Show More"}  
+                    </button>  
+                </div>  
+
+                {showPopup && selectedArtist && (  
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">  
+                        <div className="bg-violet-300 rounded-lg p-6 w-11/12 sm:w-1/2 relative overflow-y-auto max-h-[80vh]">  
+                            <button onClick={closePopup} className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>  
+                            <h2 className="text-2xl font-bold mb-4">Details for {selectedArtist.artist}</h2>  
+                            <p>Rank: {selectedArtist.rank}</p>  
+                            <p>Most Listened Season: {artistDetails.season}</p>  
+                            <p>Total Listening Time: {(artistDetails.totalListeningTime / 1000).toFixed(2)} seconds</p>  
+                            <p>Total Songs: {artistDetails.totalSongs}</p>  
+                            <p>Unique Songs: {artistDetails.uniqueSongs}</p>  
+                            <p>Listening Percentage: {artistDetails.listeningPercentage.toFixed(2)}%</p>  
+                            <h3 className="text-xl font-semibold mt-4">Top Songs:</h3>  
+                            <ul className="list-disc pl-6">  
+                                {(showAllSongs ? artistDetails.topSongs : artistDetails.topSongs.slice(0, 5)).map((song, index) => (  
+                                    <li key={index}>  
+                                        {song.name} - {(song.totalMs / 1000).toFixed(2)} seconds  
+                                    </li>  
+                                ))}  
+                            </ul>  
+                            <button  
+                                onClick={toggleShowAllSongs}  
+                                className="mt-4 bg-violet-700 text-white px-4 py-2 rounded-lg hover:bg-violet-900 transition"  
+                            >  
+                                {showAllSongs ? "Show Less" : "Show More"}  
+                            </button>  
+                        </div>  
+                    </div>  
+                )}  
+            </div>  
+        </div>  
+    );  
+}; 
 export default Artists;

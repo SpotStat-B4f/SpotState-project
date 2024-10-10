@@ -31,7 +31,7 @@ function Nav() {
           <Link to="/artists">Artists</Link>
         </li>
         <li className="hover:text-purple-700 hover:bg-white rounded-2xl px-3 py-1 flex-1 text-center ease-out duration-300">
-          <Link to="/podcast">Podcast</Link>
+          <Link to="/BoadCast">Podcast</Link>
         </li>
       </ul>
 
@@ -71,7 +71,7 @@ function Nav() {
             <Link to="/artists" onClick={toggleMenu}>Artists</Link>
           </li>
           <li className="hover:text-purple-700 hover:bg-white rounded-2xl px-3 py-1 text-center ease-out duration-300">
-            <Link to="/podcast" onClick={toggleMenu}>Podcast</Link>
+            <Link to="/BoadCast" onClick={toggleMenu}>Podcast</Link>
           </li>
         </ul>
       )}
