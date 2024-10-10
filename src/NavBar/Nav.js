@@ -57,7 +57,7 @@ function Nav() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <ul className="absolute top-16 left-0 w-full bg-[#2d0f55] text-white flex flex-col items-center gap-4 py-4">
+        <ul className="absolute top-16 left-0 w-full bg-[#2d0f55] bg-opacity-75 text-white flex flex-col items-center gap-4 py-4">
           <li className="hover:text-purple-700 hover:bg-white rounded-2xl px-3 py-1 text-center ease-out duration-300">
             <Link to="/Home" onClick={toggleMenu}>Home</Link>
           </li>

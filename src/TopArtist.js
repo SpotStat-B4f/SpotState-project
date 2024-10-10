@@ -45,7 +45,7 @@ const TopArtistsComponent = () => {
     const displayedSortedArtists = showMore ? sortedArtists : sortedArtists.slice(0, 5);
 
     return (
-        <div className="m-6 p-6 max-w-4xl mx-auto bg-[#3a0e73] bg-opacity-90 hover:bg-opacity-100 transition-all ease-in duration-200 rounded-lg shadow-lg">
+        <div className="m-6 p-6 max-w-4xl mx-auto hover:bg-opacity-100 transition-all ease-in duration-200 rounded-lg shadow-lg">
             <h1 className="text-2xl font-bold text-left mb-6 text-white">Top Artists</h1>
             <button
                 onClick={filterToggle}

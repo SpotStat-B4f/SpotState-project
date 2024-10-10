@@ -61,7 +61,7 @@ const Artists = () => {
             const trackName = track.master_metadata_track_name;  
             const msPlayed = track.ms_played || 0;  
             const date = new Date(track.ts);  
-            const month = date.getMonth() + 1; // January is 0, December is 11  
+            const month = date.getMonth() + 1; 
             totalListeningTime += msPlayed;  
 
             uniqueTracks.add(trackName);  
@@ -118,7 +118,6 @@ const Artists = () => {
     const toggleShowAllSongs = () => {
         setShowAllSongs(!showAllSongs);
     };
-
     return (  
         <div className="relative py-24">  
             <div className="absolute inset-0 z-0">  
@@ -139,7 +138,7 @@ const Artists = () => {
                         </div>  
                     ))}  
                 </div>  
-
+    
                 <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-20">  
                     <button   
                         onClick={showToggle}   
@@ -148,7 +147,7 @@ const Artists = () => {
                         {showMore ? "Show Less" : "Show More"}  
                     </button>  
                 </div>  
-
+    
                 {showPopup && selectedArtist && (  
                     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">  
                         <div className="bg-violet-300 rounded-lg p-6 w-11/12 sm:w-1/2 relative overflow-y-auto max-h-[80vh]">  
@@ -156,7 +155,7 @@ const Artists = () => {
                             <h2 className="text-2xl font-bold mb-4">Details for {selectedArtist.artist}</h2>  
                             <p>Rank: {selectedArtist.rank}</p>  
                             <p>Most Listened Season: {artistDetails.season}</p>  
-                            <p>Total Listening Time: {(artistDetails.totalListeningTime / 1000).toFixed(2)} seconds</p>  
+                            <p>Total Listening Time: {formatTime(artistDetails.totalListeningTime)}</p>  
                             <p>Total Songs: {artistDetails.totalSongs}</p>  
                             <p>Unique Songs: {artistDetails.uniqueSongs}</p>  
                             <p>Listening Percentage: {artistDetails.listeningPercentage.toFixed(2)}%</p>  
@@ -164,7 +163,7 @@ const Artists = () => {
                             <ul className="list-disc pl-6">  
                                 {(showAllSongs ? artistDetails.topSongs : artistDetails.topSongs.slice(0, 5)).map((song, index) => (  
                                     <li key={index}>  
-                                        {song.name} - {(song.totalMs / 1000).toFixed(2)} seconds  
+                                        {song.name} - {formatTime(song.totalMs)}  
                                     </li>  
                                 ))}  
                             </ul>  

@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
 import TopSongsComponent from "./TopSongs";
 import TopArtistsComponent from "./TopArtist";
 import TopAlbumsComponent from "./TopAlbums";
@@ -41,6 +41,7 @@ const TopListRouter = () => {
 
             <div className="p-6 max-w-6xl mx-auto">
                 <Routes>
+                    <Route path="/" element={<Navigate to="TopSongs" />}/>
                     <Route path="TopSongs" element={<TopSongsComponent />} />
                     <Route path="TopArtist" element={<TopArtistsComponent />} />
                     <Route path="TopAlbums" element={<TopAlbumsComponent />} />
