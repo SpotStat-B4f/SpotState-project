@@ -1,5 +1,5 @@
 import Data from "../spotify_data.json";
-// import profile from "../Img/profile.jpg";
+import profile from "../Img/profile.jpg";
 import Cards from "./Cards";
 
 const DataLngth = () => Data.length;
@@ -84,41 +84,36 @@ function Fun() {
 
 function Profile() {
   return (
-    <div className="bg-black py-24 flex justify-center flex-col items-center bg-gradient-to-r from-pink-950 via-[#1a001a] via-[#2e003e]  to-[#0d000d] ">
-      <div className="h-[60%] w-[90%] bg-gradient-to-b from-pink-500 via-purple-700 to-purple-1000 rounded-[50px] border-[6px] border-purple-700 flex flex-col items-center justify-center">
-        <div className="bg-profilebg bg-cover bg-no-repeat bg-cover rounded-t-[46px] h-full bg-bottom flex flex-col items-center justify-center w-full">
-          <div className="relative mt-[100px] self-start ">
-            <div className="w-[180px] h-[180px]   rounded-full p-[10px] bg-gradient-to-r from-green-300  via-pink-300 via-blue-400 via-rose-500 to-purple-500 bg-[length:250%_200%]  animate-border-rotate shadow-lg">
+    <div className="bg-black py-28 flex flex-col items-center justify-center bg-gradient-to-r from-pink-950 via-[#1a001a] to-[#0d000d] sm:px-4 md:px-10 lg:px-20 xl:px-40">
+      <div className="w-full max-w-7xl bg-gradient-to-b from-pink-500 via-purple-700 to-purple-1000 rounded-[50px] border-[6px] border-purple-700 flex flex-col items-center justify-center">
+        <div className="bg-profilebg bg-cover bg-no-repeat rounded-t-[46px] h-full w-full bg-bottom flex flex-col items-center justify-center">
+          <div className="relative mt-10 sm:mt-[80px] md:mt-[100px] self-start">
+            <div className="w-[140px] sm:w-[160px] md:w-[180px] h-[140px] sm:h-[160px] md:h-[180px] rounded-full p-[6px] sm:p-[8px] md:p-[10px] bg-gradient-to-r from-green-300 via-pink-300 via-blue-400 to-purple-500 animate-border-rotate shadow-lg">
               <img
-                src=""
-                width={160}
-                height={160}
-                className="rounded-full"
+                src={profile}
+                className="rounded-full w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
 
-        <ul className="flex justify-center items-center w-[80%] text-white font-medium text-lg  gap-6 p-2">
-          <li className="hover:text-green-300 rounded-2xl py-2 px-4 text-center ease-out duration-300 cursor-pointer hover:scale-[1.1] duration-300 ease-out">
+        <ul className="flex flex-wrap justify-center items-center w-full max-w-4xl text-white font-medium text-sm sm:text-lg gap-2 sm:gap-6 p-2">
+          <li className="hover:text-green-300 rounded-2xl py-1 sm:py-2 px-2 sm:px-4 ease-out duration-300 cursor-pointer hover:scale-[1.1]">
             <a href="#">Play Song</a>
           </li>
-          <li
-            id="two"
-            className="hover:text-green-300  rounded-2xl py-2 px-4 text-center ease-out duration-300 cursor-pointer hover:scale-[1.1] duration-300 ease-out"
-          >
+          <li className="hover:text-green-300 rounded-2xl py-1 sm:py-2 px-2 sm:px-4 ease-out duration-300 cursor-pointer hover:scale-[1.1]">
             <a href="#">Tracks</a>
           </li>
-          <li className="hover:text-green-300 rounded-2xl py-2 px-4 text-center ease-out duration-300 cursor-pointer hover:scale-[1.1] duration-300 ease-out">
+          <li className="hover:text-green-300 rounded-2xl py-1 sm:py-2 px-2 sm:px-4 ease-out duration-300 cursor-pointer hover:scale-[1.1]">
             <a href="#">Spent Time</a>
           </li>
-          <li className="hover:text-green-300  rounded-2xl py-2 px-4 text-center ease-out duration-300 cursor-pointer hover:scale-[1.1] duration-300 ease-out">
+          <li className="hover:text-green-300 rounded-2xl py-1 sm:py-2 px-2 sm:px-4 ease-out duration-300 cursor-pointer hover:scale-[1.1]">
             <a href="#">Avg Daily Listen</a>
           </li>
-          <li className="hover:text-green-300  rounded-2xl py-2 px-4 text-center ease-out duration-300 cursor-pointer hover:scale-[1.1] duration-300 ease-out">
-            <a href="#">Focus Houre</a>
+          <li className="hover:text-green-300 rounded-2xl py-1 sm:py-2 px-2 sm:px-4 ease-out duration-300 cursor-pointer hover:scale-[1.1]">
+            <a href="#">Focus Hour</a>
           </li>
-          <li className="hover:text-green-300 rounded-2xl py-2 px-4 text-center ease-out duration-300 cursor-pointer hover:scale-[1.1] duration-300 ease-out">
+          <li className="hover:text-green-300 rounded-2xl py-1 sm:py-2 px-2 sm:px-4 ease-out duration-300 cursor-pointer hover:scale-[1.1]">
             <a href="#">Focus Season</a>
           </li>
         </ul>
@@ -137,12 +132,14 @@ function Profile() {
     </div>
   );
 }
+
 function General() {
   return (
-    <diV className="flex flex-col  ">
+    <div className="flex flex-col w-full max-w-9xl mx-auto">
       <Profile />
-    </diV>
+    </div>
   );
 }
+
 
 export default General;

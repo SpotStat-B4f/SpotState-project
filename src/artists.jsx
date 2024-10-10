@@ -114,11 +114,11 @@ const Artists = () => {
     return (
         <div className="relative py-16">
             <div className="absolute inset-0 z-0">
-                <div className="sticky top-0 h-screen flex flex-col items-center justify-center bg-gradient-to-b from-purple-800 to-pink-800 text-white">
+                <div className="sticky top-0 h-screen flex flex-col items-center justify-center bg-gradient-to-r from-pink-950 via-[#1a001a] via-[#2e003e]  to-[#0d000d] text-white pt-20  text-white">
                 </div>
             </div>
             <div className="relative z-10 p-4">
-                <h1 className="text-3xl font-bold mb-4 text-center py-6">All Artists</h1>
+                <h1 className="text-3xl font-bold mb-4 text-center py-6 text-white">All Artists</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {displayedSortedArtists.map((item, index) => (
                         <div

@@ -11,7 +11,7 @@ function Nav() {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full p-2 flex justify-around items-center bg-opacity-0 text-white text-xl z-10">
+    <div className="fixed top-0 left-0 w-full p-2 flex justify-around items-center bg-opacity-0 text-white text-xl z-50 shadow-lg">
       <div className="flex items-center gap-4">
         <img src={logo} alt="Logo" className="w-16 h-16" />
       </div>

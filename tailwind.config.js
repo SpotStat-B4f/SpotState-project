@@ -1,19 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      colors: {
-        'scrollbar-thumb': '#00D084', 
-        'scrollbar-track': '#3a0e73', 
+      backgroundImage: {
+        background: "url('./Img/bg-9.jpg')",
+        profilebg: "url('./Img/headphone.jpg')",
       },
-      backgroundImage:{
-        'background':"url('./Img/bg-9.jpg')"
-      }
-    }
-  },
-  plugins: [
-    require('tailwind-scrollbar'),
-  ],
-}
+      keyframes: {
+        "border-rotate": {
+          "0%": { "background-position": "0% 50%" },
 
+          "100%": { "background-position": "50% 100%" },
+        },
+      },
+      animation: {
+        "border-rotate": "border-rotate 5s linear infinite",
+      },
+      backgroundSize: {
+        "gradient-border": "200% 200%",
+      },
+    },
+  },
+  plugins: [],
+};

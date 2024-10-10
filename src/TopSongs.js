@@ -47,7 +47,7 @@ const TopSongsComponent = () => {
 
 
     return (
-        <div className="m-6 p-6 max-w-4xl mx-auto bg-[#3a0e73] bg-opacity-80 hover:bg-opacity-100 transition-all ease-in duration-200 rounded-lg shadow-lg">
+        <div className="m-6 p-6 max-w-4xl mx-auto bg-opacity-80 hover:bg-opacity-100 transition-all ease-in duration-200 rounded-lg shadow-lg">
             <h1 className="text-2xl font-bold text-left mb-6 text-white ">Top Songs</h1>
             <button
                 onClick={filterToggle}
